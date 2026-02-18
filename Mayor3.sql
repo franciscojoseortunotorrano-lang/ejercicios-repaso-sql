@@ -1,0 +1,22 @@
+DROP FUNCTION IF EXISTS mayor3;
+
+DELIMITER $$
+
+CREATE FUNCTION mayor3(num1 INT, num2 INT, num3 INT) RETURNS INT
+BEGIN 
+	IF (num1>num2)THEN
+		IF(num1>num3)THEN
+			RETURN num1;
+		ELSE
+			RETURN num3;
+		END IF;
+	ELSE
+		IF(num2>num3)THEN
+			RETURN num2;
+		ELSE
+			RETURN num3;
+		END IF;
+	END IF;
+END $$
+
+DELIMITER ;
