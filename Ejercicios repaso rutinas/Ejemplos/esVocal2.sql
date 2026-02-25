@@ -1,0 +1,14 @@
+DROP FUNCTION IF EXISTS es_Vocal;
+
+DELIMITER $$
+
+CREATE FUNCTION es_Vocal(letra char) RETURNS BOOLEAN
+BEGIN
+	IF (UPPER(letra)IN('A','E','I','O','U')) THEN
+		RETURN true;
+	ELSE
+		RETURN false;
+	END IF;
+END $$
+
+DELIMITER ;

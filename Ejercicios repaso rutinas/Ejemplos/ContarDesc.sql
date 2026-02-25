@@ -1,0 +1,15 @@
+DROP PROCEDURE IF EXISTS contar;
+
+DELIMITER $$
+
+CREATE PROCEDURE contar(n INT)
+BEGIN
+	DECLARE num INT;
+	SET num=n;
+	WHILE (num>=1) DO
+		SELECT num;
+		SET num=num-1;
+	END WHILE;
+END $$
+
+DELIMITER ;
